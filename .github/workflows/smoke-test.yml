@@ -18,4 +18,8 @@ jobs:
           # headers: '{ "custom-header": "value" }'
           timeout: 3000
           log-response: true
+
+      - run: |
+          # make file runnable, might not be necessary
+          chmod +x "${GITHUB_WORKSPACE}/.github/script.sh"
       - run: ${GITHUB_WORKSPACE}/.github/workflows/check-response.sh
