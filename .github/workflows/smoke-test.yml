@@ -1,7 +1,7 @@
 name: Smoke test (pinging the website).
 on:
   schedule:
-    - cron: "0/2 * * * *"
+    - cron: "* * * * *"
 jobs:
   verify-website-returns-html:
     runs-on: ubuntu-latest
