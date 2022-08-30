@@ -20,5 +20,10 @@ jobs:
           log-response: true
       - run: |
           # Verify that response contains '<!doctype html>'
-          chmod +x "${GITHUB_WORKSPACE}/.github/workflows/check-response.sh";
-          SMOKE_TEST_RESPONSE=${{ steps.website.outputs.response }} ${GITHUB_WORKSPACE}/.github/workflows/check-response.sh
+          if [[ "${{ steps.website.outputs.response }}" == *"<!doctype html>"* ]]; then
+            echo "Response contained '<!doctype html>'.";
+            exit 0;
+          fi
+
+          echo "Response did not contain '<!doctype html>'.";
+          exit 1;
