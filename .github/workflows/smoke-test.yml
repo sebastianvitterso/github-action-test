@@ -21,5 +21,5 @@ jobs:
 
       - run: |
           # make file runnable, might not be necessary
-          chmod +x "${GITHUB_WORKSPACE}/.github/script.sh"
+          chmod +x "${GITHUB_WORKSPACE}/.github/workflows/check-response.sh"
       - run: ${GITHUB_WORKSPACE}/.github/workflows/check-response.sh
