@@ -1,7 +1,7 @@
 name: Smoke test (pinging the website).
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "21/15 * * * *"
   workflow_dispatch:
 jobs:
   verify-website-returns-html:
