@@ -17,4 +17,4 @@ jobs:
           # headers: '{ "custom-header": "value" }'
           timeout: 3000
           log-response: true
-      - run: check-response.sh
+      - run: ./check-response.sh
