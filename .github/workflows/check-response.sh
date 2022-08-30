@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ "${ steps.api.response }" == *"<!doctype html>"* ]]; then
+if [[ "${SMOKE_TEST_RESPONSE}" == *"<!doctype html>"* ]]; then
   echo "Response contained '<!doctype html>'."
   exit 0;
 fi
