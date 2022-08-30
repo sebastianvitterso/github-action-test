@@ -16,7 +16,6 @@ jobs:
           url: https://sustainability.equinor.com/
           method: "GET"
           accept: 200
-          # headers: '{ "custom-header": "value" }'
           timeout: 3000
           log-response: true
       - run: |
