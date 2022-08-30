@@ -20,7 +20,7 @@ jobs:
           log-response: true
       - run: |
           # Verify that response contains '<!doctype html>'
-          SMOKE_TEST_RESPONSE=${{ steps.website.outputs.response }}
+          export SMOKE_TEST_RESPONSE=${{ steps.website.outputs.response }}
           if [[ "${ SMOKE_TEST_RESPONSE }" == *"<!doctype html>"* ]]; then
             echo "Response contained '<!doctype html>'.";
             exit 0;
