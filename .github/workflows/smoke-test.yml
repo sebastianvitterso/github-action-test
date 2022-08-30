@@ -1,7 +1,7 @@
 name: Smoke test (pinging the website).
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "0 * * * *"
   workflow_dispatch:
 jobs:
   verify-website-returns-html:
@@ -20,11 +20,5 @@ jobs:
           log-response: true
       - run: |
           # Verify that response contains '<!doctype html>'
-          export SMOKE_TEST_RESPONSE=${{ steps.website.outputs.response }}
-          if [[ "${ SMOKE_TEST_RESPONSE }" == *"<!doctype html>"* ]]; then
-            echo "Response contained '<!doctype html>'.";
-            exit 0;
-          fi
-
-          echo "Response did not contain '<!doctype html>'.";
-          exit 1;
+          chmod +x "${GITHUB_WORKSPACE}/.github/workflows/check-response.sh";
+          SMOKE_TEST_RESPONSE=${{ steps.website.outputs.response }} ${GITHUB_WORKSPACE}/.github/workflows/check-response.sh
