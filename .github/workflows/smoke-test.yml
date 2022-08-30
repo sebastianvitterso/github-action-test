@@ -22,4 +22,4 @@ jobs:
       - run: |
           # make file runnable, might not be necessary
           chmod +x "${GITHUB_WORKSPACE}/.github/workflows/check-response.sh"
-      - run: SMOKE_TEST_RESPONSE=${{ steps.website.response }} ${GITHUB_WORKSPACE}/.github/workflows/check-response.sh
+      - run: SMOKE_TEST_RESPONSE=${{ steps.website.outputs.response }} ${GITHUB_WORKSPACE}/.github/workflows/check-response.sh
