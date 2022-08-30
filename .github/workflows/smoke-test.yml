@@ -17,4 +17,4 @@ jobs:
           # headers: '{ "custom-header": "value" }'
           timeout: 3000
           log-response: true
-      - run: .github/workflows/check-response.sh
+      - run: ./.github/workflows/check-response.sh
