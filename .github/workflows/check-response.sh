@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "${SMOKE_TEST_RESPONSE}";
-
 if [[ "${SMOKE_TEST_RESPONSE}" == *"<!doctype html>"* ]]; then
   echo "Response contained '<!doctype html>'."
   exit 0;

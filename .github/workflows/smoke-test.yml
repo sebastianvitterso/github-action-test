@@ -13,7 +13,8 @@ jobs:
         id: website
         uses: indiesdev/curl@v1.1
         with:
-          url: https://sustainability.equinor.com/
+          url: https://yesno.wtf/api
+          # url: https://sustainability.equinor.com/
           method: "GET"
           accept: 200
           # headers: '{ "custom-header": "value" }'
