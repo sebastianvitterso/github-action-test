@@ -20,6 +20,6 @@ jobs:
           timeout: 3000
           log-response: true
       - run: |
-          # make file runnable, might not be necessary
-          chmod +x "${GITHUB_WORKSPACE}/.github/workflows/check-response.sh"
-      - run: SMOKE_TEST_RESPONSE=${{ steps.website.outputs.response }} ${GITHUB_WORKSPACE}/.github/workflows/check-response.sh
+          # Verify that response contains '<!doctype html>'
+          chmod +x "${GITHUB_WORKSPACE}/.github/workflows/check-response.sh";
+          SMOKE_TEST_RESPONSE=${{ steps.website.outputs.response }} ${GITHUB_WORKSPACE}/.github/workflows/check-response.sh
